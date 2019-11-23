@@ -8,6 +8,14 @@ const cors = require("cors")
 app.use(express.json())
 app.use(morgan("tiny"))
 app.use(cors())
+var fs = require('fs');
+app.get("/",(re1,res)=>{
+    fs.readFile('index.html', function(err, data) {
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.write(data);
+        res.end();
+      });
+})
 app.get("/ping",(req,res) => {
     res.send("success")
 })
