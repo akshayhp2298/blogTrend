@@ -8,8 +8,7 @@ const cors = require("cors")
 app.use(express.json())
 app.use(morgan("tiny"))
 app.use(cors())
-app.post("/ping",(req,res) => {
-    console.log(req.body)
+app.get("/ping",(req,res) => {
     res.send("success")
 })
 app.listen(port,(err) => {
