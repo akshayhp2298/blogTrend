@@ -1,4 +1,4 @@
-const {User} = require("../model/user")
+const { User } = require("../model/user")
 const { validate } = require("../model/user")
 const bcrypt = require("bcrypt")
 const validateLogin = async (req, res) => {
